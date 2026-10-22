@@ -17,7 +17,7 @@ CREATE TABLE tb_usuarios (
     id_rol      INT UNSIGNED NOT NULL,
     nombre      VARCHAR(60)  NOT NULL,
     apellidos   VARCHAR(100) NOT NULL,
-    email       VARCHAR(120) NOT NULL,
+    email       VARCHAR(120) UNIQUE NOT NULL,
     password    VARCHAR(255) NOT NULL,
     PRIMARY KEY (id_usuario),
     FOREIGN KEY (id_rol) REFERENCES tb_roles (id_rol)
@@ -37,9 +37,6 @@ CREATE TABLE tb_curso (
     id_curso  INT UNSIGNED NOT NULL AUTO_INCREMENT,
     id_grado  INT UNSIGNED NOT NULL,
     nombre    VARCHAR(60)  NOT NULL,
-    etapa     VARCHAR(40)  NOT NULL,            -- ESO, Batxillerat, FP...
-    nivel     TINYINT UNSIGNED NOT NULL,
-    grupo     CHAR(1)      NOT NULL DEFAULT 'A',
     PRIMARY KEY (id_curso),
     FOREIGN KEY (id_grado) REFERENCES tb_grado_academico (id_grado)
 ) ENGINE=InnoDB;
@@ -47,7 +44,7 @@ CREATE TABLE tb_curso (
 CREATE TABLE tb_alumnos (
     id_alumno         INT UNSIGNED NOT NULL AUTO_INCREMENT,
     id_curso          INT UNSIGNED NOT NULL,
-    dni               VARCHAR(9)   NOT NULL,
+    dni               VARCHAR(9) UNIQUE  NOT NULL,
     fecha_nacimiento  DATE         NOT NULL,
     PRIMARY KEY (id_alumno),
     FOREIGN KEY (id_curso)   REFERENCES tb_curso (id_curso)
@@ -55,7 +52,7 @@ CREATE TABLE tb_alumnos (
 
 CREATE TABLE tb_asignatura (
     id_asignatura  INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    codigo         VARCHAR(10)  NOT NULL,
+    codigo         VARCHAR(10) UNIQUE  NOT NULL,
     nombre         VARCHAR(80)  NOT NULL,
     PRIMARY KEY (id_asignatura)
 ) ENGINE=InnoDB;
@@ -92,7 +89,7 @@ CREATE TABLE tb_notas (
 INSERT INTO tb_roles (id_rol, nombre) VALUES
 (1, 'administrador'),
 (2, 'profesor'),
-(3, 'alumno');
+(3, 'secretaria');
 
 -- Contraseñas: hashes bcrypt de ejemplo (no son contraseñas reales)
 INSERT INTO tb_usuarios (id_usuario, id_rol, nombre, apellidos, email, password) VALUES
@@ -117,24 +114,24 @@ INSERT INTO tb_usuarios (id_usuario, id_rol, nombre, apellidos, email, password)
 INSERT INTO tb_grado_academico (id_grado, nombre, fecha_inicio, fecha_fin) VALUES
 (1, '2025-2026', '2025-09-10', '2026-06-19');
 
-INSERT INTO tb_curso (id_curso, id_grado, nombre, etapa, nivel, grupo) VALUES
-(1, 1, '1r ESO A', 'ESO', 1, 'A'),
-(2, 1, '1r ESO B', 'ESO', 1, 'B'),
-(3, 1, '2n ESO A', 'ESO', 2, 'A');
+INSERT INTO tb_curso (id_curso, id_grado, nombre) VALUES
+(1, 1, '1r ESO A'),
+(2, 1, '1r ESO B'),
+(3, 1, '2n ESO A');
 
-INSERT INTO tb_alumnos (id_alumno, id_usuario, id_curso, dni, fecha_nacimiento) VALUES
-(1,  6,  1, '43012345K', '2013-02-14'),
-(2,  7,  1, '43023456L', '2013-05-30'),
-(3,  8,  1, '43034567M', '2013-09-08'),
-(4,  9,  1, '43045678N', '2013-11-21'),
-(5,  10, 2, '43056789P', '2013-01-17'),
-(6,  11, 2, '43067890Q', '2013-04-03'),
-(7,  12, 2, '43078901R', '2013-07-26'),
-(8,  13, 2, '43089012S', '2013-12-12'),
-(9,  14, 3, '42990123T', '2012-03-09'),
-(10, 15, 3, '42901234V', '2012-06-18'),
-(11, 16, 3, '42812345W', '2012-08-29'),
-(12, 17, 3, '42723456X', '2012-10-05');
+INSERT INTO tb_alumnos (id_alumno, id_curso, dni, fecha_nacimiento) VALUES
+(1,    1, '43012345K', '2013-02-14'),
+(2,   1, '43023456L', '2013-05-30'),
+(3,   1, '43034567M', '2013-09-08'),
+(4,   1, '43045678N', '2013-11-21'),
+(5,   2, '43056789P', '2013-01-17'),
+(6,  2, '43067890Q', '2013-04-03'),
+(7,  2, '43078901R', '2013-07-26'),
+(8,  2, '43089012S', '2013-12-12'),
+(9,   3, '42990123T', '2012-03-09'),
+(10, 3, '42901234V', '2012-06-18'),
+(11, 3, '42812345W', '2012-08-29'),
+(12, 3, '42723456X', '2012-10-05');
 
 INSERT INTO tb_asignatura (id_asignatura, codigo, nombre) VALUES
 (1, 'MAT', 'Matemàtiques'),
