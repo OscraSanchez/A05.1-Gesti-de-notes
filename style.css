@@ -1,0 +1,266 @@
+/* ==========================================================
+   Login y Registro - Jesuïtes Bellvitge
+   ========================================================== */
+
+:root {
+    --azul-panel: #3262cf;
+    --azul-boton: #00227f;
+    --campo-fondo: #f3f4f8;
+    --campo-texto: #333a4d;
+    --placeholder: #8b90a0;
+    --blanco: #ffffff;
+    --error-fondo: #ffe3e3;
+    --error-texto: #8a1c1c;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: "Trebuchet MS", "Segoe UI", Tahoma, Arial, sans-serif;
+    color: var(--blanco);
+    background: var(--blanco);
+}
+
+/* ---------- Estructura a dos paneles ---------- */
+
+.contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+}
+
+.panel-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--blanco);
+    padding: 24px;
+}
+
+.panel-logo img {
+    max-width: 260px;
+    width: 70%;
+    height: auto;
+}
+
+.panel-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--azul-panel);
+    padding: 40px 24px;
+}
+
+/* ---------- Tipografía ---------- */
+
+.panel-form h1 {
+    margin: 0 0 32px;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+/* ---------- Campos ---------- */
+
+input[type="text"],
+input[type="password"],
+select {
+    width: 100%;
+    height: 34px;
+    padding: 0 12px;    
+    border: none;
+    border-radius: 8px;
+    background: var(--campo-fondo);
+    color: var(--campo-texto);
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+input::placeholder {
+    color: var(--placeholder);
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    color: var(--placeholder);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%238b90a0' stroke-width='2'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 32px;
+}
+
+select:valid {
+    color: var(--campo-texto);
+}
+
+input:focus,
+select:focus {
+    outline: 3px solid rgba(255, 255, 255, 0.7);
+    outline-offset: 1px;
+}
+
+/* ---------- Botón ---------- */
+
+.btn {
+    display: block;
+    margin: 28px auto 0;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 10px;
+    background: var(--azul-boton);
+    color: var(--blanco);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(0, 20, 90, 0.55);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(0, 20, 90, 0.65);
+}
+
+.btn:focus-visible {
+    outline: 3px solid var(--blanco);
+    outline-offset: 3px;
+}
+
+/* ---------- Enlace inferior ---------- */
+
+.enlace-extra {
+    margin: 24px 0 0;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.enlace-extra a {
+    color: var(--blanco);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.enlace-extra a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Errores ---------- */
+
+.errores {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: var(--error-fondo);
+    color: var(--error-texto);
+    font-size: 0.9rem;
+}
+
+.errores ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+/* ==========================================================
+   LOGIN
+   ========================================================== */
+
+.form-login {
+    width: 100%;
+    max-width: 240px;
+}
+
+.form-login .campo {
+    margin-bottom: 26px;
+}
+
+.form-login .btn {
+    margin-top: 34px;
+}
+
+.form-login + .enlace-extra {
+    margin-top: 70px;
+}
+
+/* ==========================================================
+   REGISTRO
+   ========================================================== */
+
+.form-registro {
+    width: 100%;
+    max-width: 330px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 16px;
+}
+
+.form-registro .completo {
+    grid-column: 1 / -1;
+}
+
+.form-registro .btn-fila {
+    grid-column: 1 / -1;
+}
+
+.form-registro .btn {
+    margin-top: 16px;
+}
+
+.form-registro + .enlace-extra {
+    margin-top: 18px;
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media (max-width: 768px) {
+    .contenedor {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    .panel-logo {
+        padding: 28px 24px;
+    }
+
+    .panel-logo img {
+        max-width: 200px;
+    }
+
+    .panel-form h1 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .form-registro {
+        grid-template-columns: 1fr;
+    }
+}

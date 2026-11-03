@@ -1,15 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="./ValiLogin.php" method="POST">
-        <input type="text" name="user" placeholder="Email">
-        <input type="text" name="con" placeholder="Contraseña">
-        <input type="submit" value="Enviar">
-    </form>
+    <div class="contenedor">
+        <div class="panel-logo">
+            <img src="img/logo.png" alt="Jesuïtes Bellvitge - Centre d'Estudis Joan XXIII">
+        </div>
+
+        <div class="panel-form">
+            <h1>Iniciar sesión</h1>
+
+            <form class="form-login" action="./ValiLogin.php" method="POST">
+                <div class="campo">
+                    <label for="user">Nombre de usuario</label>
+                    <input type="text" id="user" name="user" placeholder="Introduce el nombre de usuario" required>
+                </div>
+
+                <div class="campo">
+                    <label for="con">Contraseña</label>
+                    <input type="password" id="con" name="con" placeholder="Introduce la contraseña" required>
+                </div>
+
+                <button type="submit" class="btn">Iniciar sesión</button>
+            </form>
+
+            <p class="enlace-extra">¿No tienes cuenta? <a href="reg.php">Regístrate</a>.</p>
+        </div>
+    </div>
 </body>
 </html>
