@@ -186,6 +186,15 @@ select:focus {
     margin: 0;
     padding-left: 18px;
 }
+/* Ocultar párrafo de errores si está vacío */
+.form-registro p.errores {
+    margin: 6px 0 0;
+    padding: 7px 10px;
+}
+
+.form-registro p.errores:empty {
+    display: none;
+}
 
 /* ==========================================================
    LOGIN
