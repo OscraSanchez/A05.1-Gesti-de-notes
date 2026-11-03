@@ -18,12 +18,12 @@
             <form class="form-login" action="./ValiLogin.php" method="POST">
                 <div class="campo">
                     <label for="user">Nombre de usuario</label>
-                    <input type="text" id="user" name="user" placeholder="Introduce el nombre de usuario" required>
+                    <input type="text" id="user" name="user" placeholder="Introduce el nombre de usuario">
                 </div>
 
                 <div class="campo">
                     <label for="con">Contraseña</label>
-                    <input type="password" id="con" name="con" placeholder="Introduce la contraseña" required>
+                    <input type="password" id="con" name="con" placeholder="Introduce la contraseña">
                 </div>
 
                 <button type="submit" class="btn">Iniciar sesión</button>
