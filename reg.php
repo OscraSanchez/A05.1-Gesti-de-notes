@@ -12,41 +12,33 @@
         <div class="panel-logo">
             <img src="img/logo.png" alt="Jesuïtes Bellvitge - Centre d'Estudis Joan XXIII">
         </div>
-
         <div class="panel-form">
             <h1>Registro</h1>
-
             <form class="form-registro" action="./ValiReg.php" method="POST">
                 <div>
                     <label for="usuario">Usuario</label>
-                    <input type="text" id="usuario" name="usuario" placeholder="Introduce tu usuario" required>
+                    <input type="text" id="usuario" name="usuario" placeholder="Introduce tu usuario" >
                 </div>
-
                 <div>
                     <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre" required>
+                    <input type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre" >
                 </div>
-
-                <div>
+                <div class="completo"   >
                     <label for="apellido">Apellido</label>
-                    <input type="text" id="apellido" name="apellido" placeholder="Introduce tu apellido" required>
+                    <input type="text" id="apellido" name="apellido" placeholder="Introduce tu apellido" >
                 </div>
-
                 <div class="completo">
                     <label for="email">Email</label>
-                    <input type="text" id="email" name="email" placeholder="Introduce tu email" required>
+                    <input type="text" id="email" name="email" placeholder="Introduce tu email" >
                 </div>
-
                 <div>
                     <label for="con">Contraseña</label>
-                    <input type="password" id="con" name="con" placeholder="Introduce la contraseña" required>
+                    <input type="password" id="con" name="con" placeholder="Introduce la contraseña" >
                 </div>
-
                 <div>
                     <label for="con2">Confirmación</label>
-                    <input type="password" id="con2" name="con2" placeholder="Confirma tu contraseña" required>
+                    <input type="password" id="con2" name="con2" placeholder="Confirma tu contraseña" >
                 </div>
-
                 <div class="btn-fila">
                     <button type="submit" class="btn">Registrar</button>
                 </div>
