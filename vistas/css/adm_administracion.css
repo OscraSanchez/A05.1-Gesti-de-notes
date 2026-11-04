@@ -1,0 +1,499 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 2rem 1rem 4rem;
+    background: #f1f5f9;
+    color: #172033;
+    font-family: system-ui, sans-serif;
+}
+
+.adm-contenedor {
+    width: min(100%, 78rem);
+    margin: 0 auto;
+}
+
+.adm-cabecera,
+.adm-barra {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.25rem;
+}
+
+.adm-barra {
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.adm-barra form,
+.adm-cabecera form {
+    margin: 0;
+}
+
+.adm-barra > a {
+    color: #1d4ed8;
+    font-weight: 650;
+    text-decoration: none;
+}
+
+.adm-barra > a:hover {
+    text-decoration: underline;
+}
+
+.adm-marca {
+    margin: 0 0 .4rem;
+    color: #1d4ed8;
+    font-size: .82rem;
+    font-weight: 750;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    margin-bottom: .4rem;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    line-height: 1.1;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.adm-subtitulo {
+    margin: 0;
+    color: #64748b;
+}
+
+.adm-boton {
+    display: inline-flex;
+    min-height: 2.65rem;
+    align-items: center;
+    justify-content: center;
+    padding: .6rem 1rem;
+    border: 1px solid transparent;
+    border-radius: .55rem;
+    background: #1d4ed8;
+    color: #fff;
+    font: inherit;
+    font-weight: 650;
+    line-height: 1.2;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color .15s ease, border-color .15s ease;
+}
+
+.adm-boton:hover {
+    background: #1e40af;
+}
+
+.adm-boton:focus-visible,
+.adm-barra a:focus-visible,
+.adm-modulos a:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 3px;
+}
+
+.adm-boton-secundario {
+    border-color: #cbd5e1;
+    background: #fff;
+    color: #344054;
+}
+
+.adm-boton-secundario:hover {
+    border-color: #94a3b8;
+    background: #f8fafc;
+}
+
+.adm-boton-peligro {
+    border-color: #fecaca;
+    background: #fff;
+    color: #b42318;
+}
+
+.adm-boton-peligro:hover {
+    border-color: #fca5a5;
+    background: #fef2f2;
+    color: #912018;
+}
+
+.adm-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.adm-tarjeta,
+.adm-panel,
+.adm-modulos a,
+.adm-registro,
+.adm-mensaje {
+    border: 1px solid #dbe3ee;
+    border-radius: .85rem;
+    background: #fff;
+    box-shadow: 0 .5rem 1.5rem rgb(15 23 42 / 5%);
+}
+
+.adm-tarjeta {
+    display: grid;
+    gap: .45rem;
+    padding: 1.1rem 1.25rem;
+}
+
+.adm-tarjeta span {
+    color: #64748b;
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+.adm-tarjeta strong {
+    color: #1d4ed8;
+    font-size: 1.8rem;
+}
+
+.adm-modulos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.adm-modulos a {
+    display: grid;
+    gap: .4rem;
+    padding: 1.25rem;
+    color: inherit;
+    text-decoration: none;
+    transition: border-color .15s ease, transform .15s ease;
+}
+
+.adm-modulos a:hover {
+    transform: translateY(-2px);
+    border-color: #93c5fd;
+}
+
+.adm-modulos strong {
+    color: #1d4ed8;
+    font-size: 1.05rem;
+}
+
+.adm-modulos span {
+    color: #64748b;
+    line-height: 1.5;
+}
+
+.adm-panel {
+    margin-top: 1.25rem;
+    padding: clamp(1rem, 3vw, 1.5rem);
+}
+
+.adm-busqueda {
+    display: grid;
+    gap: .5rem;
+    max-width: 42rem;
+    margin: 0 0 1rem;
+    color: #344054;
+    font-size: .9rem;
+    font-weight: 650;
+}
+
+.adm-busqueda input,
+.adm-busqueda-controles input {
+    width: 100%;
+    min-height: 2.65rem;
+    padding: .6rem .7rem;
+    border: 1px solid #cbd5e1;
+    border-radius: .5rem;
+    background: #fff;
+    color: #172033;
+    font: inherit;
+    font-weight: 400;
+}
+
+.adm-busqueda input:focus,
+.adm-busqueda-controles input:focus {
+    outline: 3px solid rgb(147 197 253 / 55%);
+    border-color: #2563eb;
+}
+
+.adm-busqueda-form {
+    display: grid;
+    gap: .5rem;
+    margin: 1rem 0;
+}
+
+.adm-busqueda-form .adm-busqueda {
+    margin: 0;
+}
+
+.adm-busqueda-controles {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .6rem;
+}
+
+.adm-busqueda-controles input {
+    flex: 1 1 16rem;
+}
+
+.adm-busqueda-vacio {
+    margin: 1rem 0 0;
+    color: #64748b;
+}
+
+.adm-item-buscable {
+    display: grid;
+    gap: .65rem;
+}
+
+[data-busqueda-item][hidden],
+[data-busqueda-vacio][hidden] {
+    display: none !important;
+}
+
+.adm-mensaje {
+    margin: 1.25rem 0;
+    padding: .9rem 1.1rem;
+}
+
+.adm-mensaje-exito {
+    color: #166534;
+}
+
+.adm-mensaje-error {
+    color: #b42318;
+}
+
+.adm-formulario {
+    min-width: 0;
+}
+
+.adm-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: end;
+    gap: 1rem;
+}
+
+.adm-formulario label {
+    display: grid;
+    min-width: 0;
+    gap: .4rem;
+    color: #344054;
+    font-size: .88rem;
+    font-weight: 650;
+}
+
+.adm-formulario input,
+.adm-formulario select,
+.adm-formulario textarea {
+    width: 100%;
+    min-height: 2.65rem;
+    padding: .6rem .7rem;
+    border: 1px solid #cbd5e1;
+    border-radius: .5rem;
+    background: #fff;
+    color: #172033;
+    font: inherit;
+    font-weight: 400;
+}
+
+.adm-formulario textarea {
+    resize: vertical;
+}
+
+.adm-formulario input:focus,
+.adm-formulario select:focus,
+.adm-formulario textarea:focus {
+    outline: 3px solid rgb(147 197 253 / 55%);
+    border-color: #2563eb;
+}
+
+.adm-formulario input:disabled {
+    background: #f8fafc;
+    color: #475569;
+}
+
+.adm-campo-completo {
+    grid-column: 1 / -1;
+}
+
+.adm-tabla-wrap {
+    overflow-x: auto;
+}
+
+.adm-tabla-wrap table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.adm-tabla-wrap th,
+.adm-tabla-wrap td {
+    padding: .85rem;
+    border-bottom: 1px solid #e8edf4;
+    text-align: left;
+    vertical-align: top;
+}
+
+.adm-tabla-wrap thead th {
+    background: #f8fafc;
+    color: #526078;
+    font-size: .82rem;
+}
+
+.adm-fila-usuario {
+    grid-template-columns: repeat(2, minmax(10rem, 1fr));
+}
+
+.adm-acciones {
+    display: flex;
+    min-width: 7rem;
+    flex-direction: column;
+    gap: .6rem;
+}
+
+.adm-acciones form,
+.adm-registros > form {
+    margin: 0;
+}
+
+.adm-registros {
+    display: grid;
+    gap: .75rem;
+    margin-top: 1rem;
+}
+
+.adm-registro {
+    padding: 1rem;
+}
+
+.adm-registro + form {
+    justify-self: end;
+    margin: -.5rem 0 .5rem;
+}
+
+.adm-fila-acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: .65rem;
+    margin: -.5rem 0 .5rem;
+}
+
+.adm-fila-acciones form {
+    margin: 0;
+}
+
+.adm-nota-registro {
+    display: grid;
+    gap: .75rem;
+}
+
+.adm-dato-nota {
+    display: grid;
+    gap: .25rem;
+    align-content: end;
+    margin: 0;
+    color: #475569;
+    font-size: .9rem;
+}
+
+.adm-dato-nota strong {
+    color: #344054;
+    font-size: .82rem;
+}
+
+.adm-paginacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+    color: #64748b;
+}
+
+.adm-paginacion a {
+    color: #1d4ed8;
+    font-weight: 650;
+    text-decoration: none;
+}
+
+.adm-paginacion a:hover {
+    text-decoration: underline;
+}
+
+.adm-nota-registro > form:last-child {
+    justify-self: end;
+}
+
+@media (max-width: 850px) {
+    .adm-tarjetas {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .adm-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 1.25rem .75rem 3rem;
+    }
+
+    .adm-cabecera,
+    .adm-barra {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .adm-cabecera form,
+    .adm-barra form,
+    .adm-cabecera .adm-boton,
+    .adm-barra .adm-boton {
+        width: 100%;
+    }
+
+    .adm-tarjetas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: .65rem;
+    }
+
+    .adm-tarjeta {
+        padding: .85rem;
+    }
+
+    .adm-modulos,
+    .adm-grid,
+    .adm-fila-usuario {
+        grid-template-columns: 1fr;
+    }
+
+    .adm-campo-completo {
+        grid-column: auto;
+    }
+
+    .adm-acciones {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .adm-registro + form {
+        justify-self: stretch;
+    }
+
+    .adm-registro + form .adm-boton,
+    .adm-nota-registro > form:last-child .adm-boton {
+        width: 100%;
+    }
+}
