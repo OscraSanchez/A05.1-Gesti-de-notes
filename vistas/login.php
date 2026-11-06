@@ -43,6 +43,7 @@ $errorLogin = isset($_GET['error']) && $_GET['error'] === '1';
 </head>
 <body>
 <main>
+    <?php echo password_hash('123', PASSWORD_DEFAULT); ?>
     <img src="../img/logo.webp">
     <h1>Gnotas</h1>
     <?php if ($sesionActiva): ?>
