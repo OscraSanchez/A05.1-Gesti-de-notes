@@ -45,9 +45,9 @@ $adm_alumnos = $conexion->query(
      ORDER BY g.fecha_inicio DESC,c.nombre,u.apellidos'
 )->fetchAll();
 $adm_alumno_filtrado = null;
-foreach ($adm_alumnos as $adm_alumno) {
-    if ((int) $adm_alumno['id_alumno'] === $adm_id_alumno_filtro) {
-        $adm_alumno_filtrado = $adm_alumno;
+foreach ($us as $u) {
+    if ((int) $u['id_alumno'] === $adm_id_alumno_filtro) {
+        $u_filtrado = $u;
         break;
     }
 }

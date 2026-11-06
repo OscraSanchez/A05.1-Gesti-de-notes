@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);59
+declare(strict_types=1);
 
 require_once __DIR__ . '/../../procesos/consultar_evaluacion_alumno.php';
 ?>

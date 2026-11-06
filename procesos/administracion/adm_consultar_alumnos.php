@@ -25,3 +25,8 @@ $adm_cursos = $conexion->query(
      FROM tb_curso c INNER JOIN tb_grado_academico g ON g.id_grado=c.id_grado
      ORDER BY g.fecha_inicio DESC,c.nombre'
 )->fetchAll();
+
+
+
+
+
